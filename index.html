@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>数据可视化展示：完美视界队</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="js/echarts.min.js"></script>
+    <script src="js/AsiaGeo.js"></script>
+    <script src="js/geoCoord.js"></script>
+    <script src="js/nameMap.js"></script>
+    <script src="js/2021Happiness.js"></script>
+    <script src="js/2019GDP.js"></script>
+    <script src="js/2019Education.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="navbar-container">
+                <h1 class="logo">完美<span>视界</span></h1>
+                <nav class="navbar">
+                    <ul>
+                        <li>
+                            <a href="javascript: onSelectGDP();">
+                                发展指数(GDP)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: onSelectEDU();">
+                                发展指数(教育)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: onSelectHAP();"> 
+                                幸福指数
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/mikecovlee/scudatavis-22/blob/main/README.md"> 
+                                关于
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/mikecovlee/scudatavis-22"> 
+                                GitHub
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="navbar-toggle">
+                    <div class="hamburger"></div>
+                </div>
+            </div>
+        </header>
+        
+    </div>
+    <div class="container", id="main"></div>
+    <div class="container", id="mix_bar"></div>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
