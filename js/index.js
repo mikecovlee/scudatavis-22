@@ -38,8 +38,8 @@ edu_data.sort((a, b) => {
 edu_data.forEach(element => {
     element.value = element.value.toFixed(2);
     aligned_header_edu.push(element.name)
-    aligned_edu_data.push(edu_map.get(element.name))
-    aligned_hap_edu_data.push(element.value)
+    aligned_edu_data.push(element.value)
+    aligned_hap_edu_data.push(hap_map.get(element.name))
     rate_data_edu.push((hap_map.get(element.name)/element.value).toFixed(2))
 })
 
