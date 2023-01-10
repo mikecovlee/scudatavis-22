@@ -110,7 +110,7 @@ function opt_gdp() {
             },
             {
                 id: 'statistic',
-                text: "各国发展指数(GDP)",
+                text: "各国发展指数(人均GDP，单位：千美元/人)",
                 left: '65%',
                 top: '20px',
                 textStyle: {
@@ -122,10 +122,10 @@ function opt_gdp() {
         tooltip: {
             formatter: function (params, ticket, callback) {
                 if (params.seriesName == "GDP") {
-                    return params.name + '<br />发展指数(GDP): ' + params.value + '<br />幸福指数: ' + hap_map.get(params.name)
+                    return params.name + '<br />发展指数(人均GDP): ' + params.value + '<br />幸福指数: ' + hap_map.get(params.name)
                 }
                 else if (params.seriesName == "GDP Scatter") {
-                    return params.name + '<br />发展指数(GDP): ' + gdp_map.get(params.name)
+                    return params.name + '<br />发展指数(人均GDP): ' + gdp_map.get(params.name)
                 }
                 else if (params.seriesName == "HAP Scatter") {
                     return params.name + '<br />幸福指数: ' + hap_map.get(params.name)
@@ -143,7 +143,7 @@ function opt_gdp() {
             show: true, // 是否显示 visualMap-continuous 组件 如果设置为 false，不会显示，但是数据映射的功能还存在
             // 指定 visualMapContinuous 组件的允许的最小/大值。'min'/'max' 必须用户指定。
             // [visualMap.min, visualMax.max] 形成了视觉映射的『定义域』
-            text: ['发展指数(GDP)'],
+            text: ['发展指数(人均GDP)'],
             // 文本样式
             textStyle: {
                 fontSize: 14,
@@ -218,7 +218,7 @@ function opt_gdp() {
         xAxis: [
             {
                 type: 'value',
-                name: '发展指数(GDP)',
+                name: '发展指数(人均GDP)',
                 // position: 'top',
                 // offset: 20,
                 min: 0,
@@ -246,7 +246,7 @@ function opt_gdp() {
         series: [
             //柱状图
             {
-                name: '发展指数(GDP)',
+                name: '发展指数(人均GDP)',
                 type: 'bar',
                 emphasis: {
                     focus: 'self'
@@ -638,10 +638,10 @@ function opt_hap() {
         tooltip: {
             formatter: function (params, ticket, callback) {
                 if (params.seriesName == "HAP") {
-                    return params.name + '<br />发展指数(GDP): ' + params.value + '<br />幸福指数: ' + hap_map.get(params.name)
+                    return params.name + '<br />发展指数(人均GDP): ' + params.value + '<br />幸福指数: ' + hap_map.get(params.name)
                 }
                 else if (params.seriesName == "GDP Scatter") {
-                    return params.name + '<br />发展指数(GDP): ' + gdp_map.get(params.name)
+                    return params.name + '<br />发展指数(人均GDP): ' + gdp_map.get(params.name)
                 }
                 else if (params.seriesName == "HAP Scatter") {
                     return params.name + '<br />幸福指数: ' + hap_map.get(params.name)
@@ -769,7 +769,7 @@ function opt_hap() {
                 yAxisIndex: 0
             },
             {
-                name: 'GDP Scatter',
+                name: '人均GDP Scatter',
                 type: 'effectScatter',
                 coordinateSystem: 'geo',
                 data: convertData(hap_data),
@@ -880,7 +880,7 @@ function onShowMixBarGDP() {
             }
         },
         legend: {
-            data: ['发展指数(GDP)', '幸福指数', '幸福指数/发展指数(GDP)']
+            data: ['发展指数(人均GDP)', '幸福指数', '幸福指数/发展指数(人均GDP)']
         },
         xAxis: [
             {
@@ -894,7 +894,7 @@ function onShowMixBarGDP() {
         yAxis: [
             {
                 type: 'value',
-                name: '发展指数(GDP)',
+                name: '发展指数(人均GDP)',
                 min: 0,
                 max: 80,
                 axisLabel: {
@@ -913,7 +913,7 @@ function onShowMixBarGDP() {
         ],
         series: [
             {
-                name: '发展指数(GDP)',
+                name: '发展指数(人均GDP)',
                 type: 'bar',
                 tooltip: {
                     valueFormatter: function (value) {
@@ -933,7 +933,7 @@ function onShowMixBarGDP() {
                 data: aligned_hap_data
             },
             {
-                name: '幸福指数/发展指数(GDP)',
+                name: '幸福指数/发展指数(人均GDP)',
                 type: 'line',
                 yAxisIndex: 1,
                 tooltip: {
